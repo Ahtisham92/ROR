@@ -1,3 +1,4 @@
+layout "application"
 class ArticlesController < ApplicationController
   
   def index 
@@ -20,6 +21,34 @@ class ArticlesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  
+  def edit
+    @article = Article.find(params[:id])
+
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      flash[:notice] = "Article was created successfully."
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash[:success] = "The article is deleted successfully. "
+    redirect_to articles_path
+  end
+
+  private
+  def article_params
+    params.require(:article).permit(:title, :description)
   end
 
 end

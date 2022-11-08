@@ -14,9 +14,9 @@
         <tr>
           <td><%= article.title %></td>
           <td><%= article.description%></td>
-          <td><a href="#">show</a> </td>
-          <td><a href="#">Update</a> </td>
-          <td> <a href="#">Destroy</a></td>
+          <td><%= link_to 'Show', article_path(article) %></td>
+          <td><%= link_to 'Update', '#' %></td>
+          <td><%= button_to 'Delete', article_path(article),  data: { turbo_method: :delete } %></td>
         </tr>
       </tbody>
     <% end %>
