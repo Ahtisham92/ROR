@@ -1,4 +1,3 @@
-layout "application"
 class ArticlesController < ApplicationController
   
   def index 
