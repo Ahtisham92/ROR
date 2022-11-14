@@ -1,5 +1,6 @@
 <h1>Create a new Article</h1>
-
+<%= render 'form' %>
+<!-- 
 <% if @article.errors.any? %>
   <ul>
     <% @article.errors.full_messages.each do |msg| %>
@@ -24,6 +25,6 @@
     <%= f.submit 'Create article'  %>
   </p>
   
-<% end %>
+<% end %> -->
 
 <%= link_to 'Return to articles listing', articles_path %>
